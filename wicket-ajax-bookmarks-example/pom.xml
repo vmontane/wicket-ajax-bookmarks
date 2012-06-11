@@ -8,10 +8,15 @@
 	<!-- TODO project name  -->
 	<name>quickstart</name>
 	<description></description>
-	<!--
-		TODO <organization> <name>company name</name> <url>company url</url>
-		</organization>
-	-->
+	<organization>
+	    <name>Zenika</name>
+	    <url>http://www.zenika.com/</url>
+	</organization>
+	<developers>
+	    <developer>
+	        <name>vmontane</name>
+	    </developer>
+	</developers>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
