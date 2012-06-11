@@ -20,6 +20,7 @@ How to use
 --------
 
 To change the current token just call
+
 	TokenManager.changeToken(currentPanelPosition, target);
 	
 To add a listener and get the token as soon as it changes, add an AbstractTokenValueChangeAjaxBehavior to your component
@@ -32,7 +33,9 @@ To add a listener and get the token as soon as it changes, add an AbstractTokenV
 		}
 
 	});
-	or 
+	
+or 
+	
 	dropDownChoice.add(new JQueryTokenValueChangeAjaxBehavior() {
 
 		@Override
