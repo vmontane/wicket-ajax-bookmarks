@@ -1,0 +1,16 @@
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+	<wicket:panel>
+		<form wicket:id="form">
+			<span wicket:id="userLabel">User id : </span><input type="text" wicket:id="userId"/><br/>
+			<span wicket:id="emailLabel">Email : </span><input type="text" wicket:id="email"/><br/>
+			<span wicket:id="streetLabel">Address : </span><input type="text" wicket:id="address.street"/><br/>
+			<span wicket:id="townLabel">Town : </span><input type="text" wicket:id="address.town"/><br/>
+			<button type="submit" wicket:id="submit">Submit</button>
+		</form>
+		<div wicket:id="feedback">
+		</div>
+	</wicket:panel>
+</body>
+</html>

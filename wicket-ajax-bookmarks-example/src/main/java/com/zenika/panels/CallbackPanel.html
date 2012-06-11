@@ -1,0 +1,28 @@
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+	<wicket:panel>
+		<style>
+.content-grey {
+	position: relative;
+}
+
+.content-grey .wrapper-grey {
+	background: silver;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity =   80);
+}
+</style>
+		<div wicket:id="greyWrapper">
+			<div wicket:id="information"></div>
+			<div class="wrapper-grey">&nbsp;</div>
+		</div>
+		<div wicket:id="edit"></div>
+	</wicket:panel>
+</body>
+</html>
