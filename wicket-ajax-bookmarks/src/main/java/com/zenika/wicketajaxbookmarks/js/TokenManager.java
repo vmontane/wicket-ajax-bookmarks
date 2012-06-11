@@ -7,7 +7,7 @@ import org.apache.wicket.util.string.JavaScriptUtils;
 public class TokenManager {
 
 	public static void changeToken(String token, AjaxRequestTarget target) {
-		changeToken(token, target, false);
+		changeToken(token, target, true);
 	}
 
 	public static void changeToken(String token, AjaxRequestTarget target, boolean triggerEvent) {
