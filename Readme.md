@@ -47,3 +47,4 @@ The first one requires a recent version of Internet Explorer (IE8), and the seco
 When you change the token with TokenManager.changeToken, you can ask not to trigger an event.
 
 	TokenManager.changeToken(currentPanelPosition, target, false);
+	
