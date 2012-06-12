@@ -37,6 +37,12 @@ public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefau
 		response.renderOnLoadJavaScript(onLoadJavaScript.toString());
 	}
 
+	/**
+	 * Returns the Javascript code needed to create the hash change listener.
+	 * Multiple implementations possible (html, jquery, ...).
+	 * 
+	 * @return Javascript
+	 */
 	protected abstract String getHashTagListenerScript();
 
 	@Override

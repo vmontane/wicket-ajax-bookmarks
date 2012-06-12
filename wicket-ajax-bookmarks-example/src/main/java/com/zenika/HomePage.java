@@ -59,10 +59,12 @@ public class HomePage extends WebPage {
 				currentPanel = newPanel;
 				target.add(newPanel);
 				String currentPanelPosition = Integer.toString(getCurrentPanelPosition());
+				// Changing the token
 				TokenManager.changeToken(currentPanelPosition, target, true);
 			}
 
 		});
+		// Adding a listener to monitor token changes
 		dropDownChoice.add(new DefaultTokenValueChangeAjaxBehavior() {
 
 			@Override

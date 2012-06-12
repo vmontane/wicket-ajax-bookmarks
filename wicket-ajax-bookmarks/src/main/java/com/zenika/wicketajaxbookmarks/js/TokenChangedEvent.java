@@ -2,22 +2,28 @@ package com.zenika.wicketajaxbookmarks.js;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
+/**
+ * Event sent when the token has changed
+ * 
+ * @author vmontane
+ * 
+ */
 public class TokenChangedEvent {
 
 	private final AjaxRequestTarget target;
-	private final String string;
+	private final String token;
 
-	public TokenChangedEvent(AjaxRequestTarget target, String string) {
+	public TokenChangedEvent(AjaxRequestTarget target, String token) {
 		this.target = target;
-		this.string = string;
+		this.token = token;
 	}
 
 	public AjaxRequestTarget getTarget() {
 		return target;
 	}
 
-	public String getString() {
-		return string;
+	public String getToken() {
+		return token;
 	}
 
 }

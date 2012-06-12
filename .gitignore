@@ -161,6 +161,11 @@ pip-log.txt
 #maven
 target/
 
+
+#intelligi
+.idea/
+*.iml
+
 #Mr Developer
 .mr.developer.cfg
 
