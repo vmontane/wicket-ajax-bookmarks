@@ -18,6 +18,17 @@ public abstract class DefaultTokenValueChangeAjaxBehavior extends AbstractTokenV
 	}
 
 	/**
+	 * Constructor.
+	 * 
+	 * @param getTokenOnStartup
+	 *            if true, an ajax request will be sent to get the token as soon
+	 *            as the page loads. Default to false.
+	 */
+	public DefaultTokenValueChangeAjaxBehavior(boolean getTokenOnStartup) {
+		super(getTokenOnStartup);
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	protected String getHashTagListenerScript() {

@@ -65,7 +65,7 @@ public class HomePage extends WebPage {
 
 		});
 		// Adding a listener to monitor token changes
-		dropDownChoice.add(new DefaultTokenValueChangeAjaxBehavior() {
+		dropDownChoice.add(new DefaultTokenValueChangeAjaxBehavior(true) {
 
 			@Override
 			public void onTokenChanged(AjaxRequestTarget target, String token) {

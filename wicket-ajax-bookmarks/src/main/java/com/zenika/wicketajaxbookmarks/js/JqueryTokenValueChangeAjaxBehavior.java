@@ -19,7 +19,7 @@ public abstract class JqueryTokenValueChangeAjaxBehavior extends AbstractTokenVa
 	 * Contructor.
 	 */
 	public JqueryTokenValueChangeAjaxBehavior() {
-		this(true);
+		this(true, false);
 	}
 
 	/**
@@ -27,10 +27,13 @@ public abstract class JqueryTokenValueChangeAjaxBehavior extends AbstractTokenVa
 	 * 
 	 * @param injectJquery
 	 *            set to <code>false</code> if Jquery is already present in your
-	 *            application (and it should).
+	 *            application (and it should). Default : true
+	 * @param getTokenOnStartup
+	 *            if true, an ajax request will be sent to get the token as soon
+	 *            as the page loads. Default to false.
 	 */
-	public JqueryTokenValueChangeAjaxBehavior(boolean injectJquery) {
-		super();
+	public JqueryTokenValueChangeAjaxBehavior(boolean injectJquery, boolean getTokenOnStartup) {
+		super(getTokenOnStartup);
 		this.injectJquery = injectJquery;
 	}
 

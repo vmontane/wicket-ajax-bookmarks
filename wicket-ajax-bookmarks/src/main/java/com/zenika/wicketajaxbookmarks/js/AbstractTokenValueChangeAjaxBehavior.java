@@ -12,9 +12,26 @@ import org.apache.wicket.util.string.StringValue;
 public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
 	private static final String PARAM_TOKEN = "TOKEN";
+	private boolean getTokenOnStartup;
 
+	/**
+	 * Default constructor. Will not trigger the event as soon as the page
+	 * loads. Only when the token is changed.
+	 */
 	public AbstractTokenValueChangeAjaxBehavior() {
+		this(false);
+	}
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param getTokenOnStartup
+	 *            if true, an ajax request will be sent to get the token as soon
+	 *            as the page loads. Default to false.
+	 */
+	public AbstractTokenValueChangeAjaxBehavior(boolean getTokenOnStartup) {
 		super();
+		this.getTokenOnStartup = getTokenOnStartup;
 	}
 
 	@Override
@@ -34,6 +51,11 @@ public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefau
 		StringBuilder onLoadJavaScript = new StringBuilder();
 		onLoadJavaScript.append("tokenManagerSkipEvent = false;");
 		onLoadJavaScript.append(getHashTagListenerScript());
+
+		if (getTokenOnStartup) {
+			// triggers an ajax request when the page is loaded
+			onLoadJavaScript.append(generateCallbackScript("wicketAjaxGet('" + getCallbackUrl() + "'"));
+		}
 		response.renderOnLoadJavaScript(onLoadJavaScript.toString());
 	}
 
