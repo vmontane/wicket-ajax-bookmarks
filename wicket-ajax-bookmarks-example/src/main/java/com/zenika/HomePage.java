@@ -52,13 +52,7 @@ public class HomePage extends WebPage {
 			@Override
 			protected void onUpdate(AjaxRequestTarget target) {
 				WebMarkupContainer newPanel = dropDownChoice.getModelObject();
-				if (newPanel == null)
-					newPanel = new BlankPanel(PANELS_IDS);
-				newPanel.setOutputMarkupId(true);
-				currentPanel.replaceWith(newPanel);
-				currentPanel = newPanel;
-				target.add(newPanel);
-				String currentPanelPosition = Integer.toString(getCurrentPanelPosition());
+				String currentPanelPosition = changeCurrentPanel(target, newPanel);
 				// Changing the token
 				TokenManager.changeToken(currentPanelPosition, target, true);
 			}
@@ -70,6 +64,17 @@ public class HomePage extends WebPage {
 			@Override
 			public void onTokenChanged(AjaxRequestTarget target, String token) {
 				target.appendJavaScript("alert('ontokenchanged:" + token + "');");
+
+				// change the panel if the token is correct
+				int tokenInt = -1;
+				try {
+					tokenInt = Integer.parseInt(token);
+				} catch (NumberFormatException e) {
+					// doing nothing
+				}
+				if (tokenInt >= 0) {
+					changeCurrentPanel(target, panels.get(tokenInt));
+				}
 			}
 
 		});
@@ -90,6 +95,17 @@ public class HomePage extends WebPage {
 			}
 		}
 		return matchingIndex;
+	}
+
+	private String changeCurrentPanel(AjaxRequestTarget target, WebMarkupContainer newPanel) {
+		if (newPanel == null)
+			newPanel = new BlankPanel(PANELS_IDS);
+		newPanel.setOutputMarkupId(true);
+		currentPanel.replaceWith(newPanel);
+		currentPanel = newPanel;
+		target.add(newPanel);
+		String currentPanelPosition = Integer.toString(getCurrentPanelPosition());
+		return currentPanelPosition;
 	}
 
 }

@@ -43,6 +43,15 @@ public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefau
 				new TokenChangedEvent(target, tokenParameterValue.toString()));
 	}
 
+	/**
+	 * Method called when the token changes. Note that the event
+	 * TokenChangedEvent is also broadcasted to the components of the page.
+	 * 
+	 * @param target
+	 *            the {@link AjaxRequestTarget}
+	 * @param token
+	 *            the url token
+	 */
 	public abstract void onTokenChanged(AjaxRequestTarget target, String token);
 
 	@Override
@@ -78,6 +87,10 @@ public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefau
 		return callbackStript;
 	}
 
+	/**
+	 * Getting the Javascript to call the AjaxBehavior's URL with the token as
+	 * an additionnal parameter.
+	 */
 	@Override
 	public CharSequence getCallbackUrl() {
 		return super.getCallbackUrl() + "&" + PARAM_TOKEN + "=' + window.location.hash.replace('#', '') + '";
