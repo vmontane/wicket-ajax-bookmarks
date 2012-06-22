@@ -1,4 +1,4 @@
-package com.zenika.wicketajaxbookmarks.js;
+package com.zenika.wicketajaxbookmarks;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
@@ -94,6 +94,14 @@ public abstract class AbstractTokenValueChangeAjaxBehavior extends AbstractDefau
 	@Override
 	public CharSequence getCallbackUrl() {
 		return super.getCallbackUrl() + "&" + PARAM_TOKEN + "=' + window.location.hash.replace('#', '') + '";
+	}
+
+	public boolean isGetTokenOnStartup() {
+		return getTokenOnStartup;
+	}
+
+	public void setGetTokenOnStartup(boolean getTokenOnStartup) {
+		this.getTokenOnStartup = getTokenOnStartup;
 	}
 
 }

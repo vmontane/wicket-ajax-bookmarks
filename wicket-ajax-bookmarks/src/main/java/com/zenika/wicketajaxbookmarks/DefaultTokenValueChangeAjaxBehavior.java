@@ -1,4 +1,4 @@
-package com.zenika.wicketajaxbookmarks.js;
+package com.zenika.wicketajaxbookmarks;
 
 /**
  * Default token listener. Does not need an additional Javascript plugin (cf

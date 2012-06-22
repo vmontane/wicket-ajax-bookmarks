@@ -13,8 +13,8 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.zenika.panels.BlankPanel;
-import com.zenika.wicketajaxbookmarks.js.DefaultTokenValueChangeAjaxBehavior;
-import com.zenika.wicketajaxbookmarks.js.TokenManager;
+import com.zenika.wicketajaxbookmarks.DefaultTokenValueChangeAjaxBehavior;
+import com.zenika.wicketajaxbookmarks.TokenManager;
 
 /**
  * Homepage

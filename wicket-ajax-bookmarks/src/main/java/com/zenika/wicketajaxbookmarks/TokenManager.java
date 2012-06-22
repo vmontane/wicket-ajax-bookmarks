@@ -1,4 +1,4 @@
-package com.zenika.wicketajaxbookmarks.js;
+package com.zenika.wicketajaxbookmarks;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
